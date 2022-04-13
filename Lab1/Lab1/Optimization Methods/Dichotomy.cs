@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Lab1
+namespace Lab1.Optimization_Methods
 {
-    public static class Dichotomy 
+    public class Dichotomy 
     {
-        public static double Start(double accuracy, double leftPoint, double rightPoint)
+        public Dichotomy()
+        {
+        }
+        public double Start(double accuracy, double leftPoint, double rightPoint)
         {
             while (Math.Abs(leftPoint - rightPoint) > accuracy)
             {
