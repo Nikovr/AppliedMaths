@@ -11,3 +11,17 @@ C:\Users\Admin\source\repos\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.
 C:\Users\Admin\source\repos\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.dll
 C:\Users\Admin\source\repos\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.pdb
 C:\Users\Admin\source\repos\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.genruntimeconfig.cache
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\bin\Debug\netcoreapp3.1\Lab1.exe
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\bin\Debug\netcoreapp3.1\Lab1.deps.json
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\bin\Debug\netcoreapp3.1\Lab1.runtimeconfig.json
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\bin\Debug\netcoreapp3.1\Lab1.runtimeconfig.dev.json
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\bin\Debug\netcoreapp3.1\Lab1.dll
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\bin\Debug\netcoreapp3.1\Lab1.pdb
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.csproj.AssemblyReference.cache
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.AssemblyInfoInputs.cache
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.AssemblyInfo.cs
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.dll
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.pdb
+C:\Users\Иван\RiderProjects\Lab1\AppliedMaths\Lab1\Lab1\obj\Debug\netcoreapp3.1\Lab1.genruntimeconfig.cache
