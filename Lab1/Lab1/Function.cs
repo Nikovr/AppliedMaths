@@ -8,7 +8,7 @@ namespace Lab1
     {
         public static double GetValue(double x)
         {
-            return Math.Sin(x * Math.PI / 180) * Math.Pow(x, 2) * Math.Log(x);
+            return Math.Sin(x * Math.PI / 180) * Math.Pow(x, 2);
         }
     }
 }
