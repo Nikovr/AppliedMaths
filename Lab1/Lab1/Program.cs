@@ -12,6 +12,7 @@ namespace Lab1
             Fibonacci fib = new Fibonacci();
             Parabola par = new Parabola();
             Dichotomy dichotomy = new Dichotomy();
+            GoldenSection goldenSection = new GoldenSection();
             double res1 = fib.Start(0.0001, 1, 10);
             double res2 = dichotomy.Start(0.0001, 1, 10);
             double res3 = par.Start(0.0001, 1, 10);
