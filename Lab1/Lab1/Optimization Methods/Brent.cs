@@ -4,40 +4,37 @@ namespace Lab1.OptimizationMethods
     public class Brent
     {
         private readonly double _proportion = (3 - Math.Sqrt(5)) / 2;
-
-        public Brent()
-        {
-        }
-
+        
         public double Brent1(double accuracy, double leftPoint, double rightPoint)
         {
-            var x1 = leftPoint + _proportion * (rightPoint - leftPoint);
+            var downPoint = leftPoint + _proportion * (rightPoint - leftPoint);
             var middlePoint = leftPoint + _proportion * (rightPoint - leftPoint);
-            var x3 = leftPoint + _proportion * (rightPoint - leftPoint);
-            var dCur = rightPoint - leftPoint;
-            var dPrv = rightPoint - leftPoint;
-            var fx1 = Function.GetValue(x1);
-            var fx2 = Function.GetValue(x1);
-            var fx3 = Function.GetValue(x1);
+            var upPoint = leftPoint + _proportion * (rightPoint - leftPoint);
+            var stepCur = rightPoint - leftPoint; //Инициализация текущего шага
+            var stepPrv = rightPoint - leftPoint; //Инициализация предыдущего шага
+            var fx1 = Function.GetValue(downPoint);
+            var fx2 = Function.GetValue(downPoint);
+            var fx3 = Function.GetValue(downPoint);
 
             while (true)
             {
-                if (Math.Max(x1 - leftPoint, rightPoint - x1) < accuracy)
+                var g = stepPrv / 2;
+                stepPrv = stepCur;
+                
+                if (Math.Max(downPoint - leftPoint, rightPoint - downPoint) < accuracy)
                 {
-                    return 0;
+                    return downPoint;
                 }
+                
+                //парабо
+                var middleMinusLeft = middlePoint - downPoint;
+                var middleMinusRight = middlePoint - upPoint;
 
-                var g = dPrv / 2;
-                dPrv = dCur;
+                var funcMiddleMinusLeft = fx2 - fx1;
+                var funcMiddleMinusRight = fx2 - fx3;
 
-                var middleMinusLeft = middlePoint - x1;
-                var middleMinusRight = middlePoint - x3;
-
-                var funcMML = fx2 - fx1;
-                var funcMMR = fx2 - fx3;
-
-                var numerator = Math.Pow(middleMinusLeft, 2) * funcMMR - Math.Pow(middleMinusRight, 2) * funcMML;
-                var denominator = middleMinusLeft * funcMMR - middleMinusRight * funcMML;
+                var numerator = Math.Pow(middleMinusLeft, 2) * funcMiddleMinusRight - Math.Pow(middleMinusRight, 2) * funcMiddleMinusLeft;
+                var denominator = middleMinusLeft * funcMiddleMinusRight - middleMinusRight * funcMiddleMinusLeft;
 
                 double fraction = 0;
                 double topOfParabola = 0;
@@ -49,30 +46,30 @@ namespace Lab1.OptimizationMethods
                 }
                 else
                 { 
-                    topOfParabola = x1;
+                    topOfParabola = downPoint;
                 }
                 var fa = Function.GetValue(topOfParabola);
 
-                if (topOfParabola < leftPoint || topOfParabola > rightPoint || topOfParabola == x1 || Math.Abs(topOfParabola - x1) > g)
+                if (topOfParabola < leftPoint || topOfParabola > rightPoint || topOfParabola == downPoint || Math.Abs(topOfParabola - downPoint) > g)
                 {
 
-                    if (x1 < (leftPoint + rightPoint) / 2)
+                    if (downPoint < leftPoint + _proportion * (rightPoint - leftPoint))
                     {
-                        topOfParabola = x1 + _proportion * (rightPoint - x1);
-                        dPrv = rightPoint - x1;
+                        topOfParabola = downPoint + _proportion * (rightPoint - downPoint);
+                        stepPrv = rightPoint - downPoint;
                     }
                     else
                     {
-                        var u = x1 + _proportion * (rightPoint - x1);
-                        dPrv = rightPoint - x1;
+                        var u = downPoint + _proportion * (rightPoint - downPoint);
+                        stepPrv = rightPoint - downPoint;
                     }
 
                     fa = Function.GetValue(topOfParabola);
                 }
-                dCur = Math.Abs(topOfParabola - x1);
+                stepCur = Math.Abs(topOfParabola - downPoint);
                 if (fa > fx1)
                 {
-                    if (topOfParabola < x1)
+                    if (topOfParabola < downPoint)
                     {
                         leftPoint = topOfParabola;
                     }
@@ -81,38 +78,38 @@ namespace Lab1.OptimizationMethods
                         rightPoint = topOfParabola;
                     }
 
-                    if (fa <= fx2 || middlePoint == x1)
+                    if (fa <= fx2 || middlePoint == downPoint)
                     {
-                        x3 = middlePoint;
+                        upPoint = middlePoint;
                         fx3 = fx2;
                         middlePoint = topOfParabola;
                         fx2 = fa;
                     }
                     else
                     {
-                        if (fa < fx3 || x3 == x1 || x3 == middlePoint)
+                        if (fa < fx3 || upPoint == downPoint || upPoint == middlePoint)
                         {
-                            x3 = topOfParabola;
+                            upPoint = topOfParabola;
                             fx3 = fa;
                         }
                     }
                 }
                 else
                 {
-                    if (topOfParabola < x1)
+                    if (topOfParabola < downPoint)
                     {
-                        rightPoint = x1;
+                        rightPoint = downPoint;
                     }
                     else
                     {
-                        leftPoint = x1;
+                        leftPoint = downPoint;
                     }
 
-                    x3 = middlePoint;
+                    upPoint = middlePoint;
                     fx3 = fx2;
-                    middlePoint = x1;
+                    middlePoint = downPoint;
                     fx2 = fx1;
-                    x1 = topOfParabola;
+                    downPoint = topOfParabola;
                     fx1 = fa;
                 }
             }
